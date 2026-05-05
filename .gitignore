@@ -28,11 +28,9 @@ CMD_PLA_main/runs/
 CMD_PLA_main/output/
 CMD_PLA_main/outputs/
 
-# Large local data; publish public download links instead.
+# Large local data and model artifacts; publish public download links instead.
 CMD_PLA_main/data/
 *.pt
 *.pth
 *.ckpt
-
-# Keep the paper PDF tracked.
-!docs/CMD_PLA.pdf
+*.pdf

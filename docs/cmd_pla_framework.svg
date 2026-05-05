@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="690" viewBox="0 0 1120 690">
+  <title>CMD-PLA Model Framework</title>
+  <desc>Repository-friendly framework diagram based on Figure 1 of Conditional Molecular Dynamics Refinement for Protein-Ligand Affinity Prediction.</desc>
+  <defs>
+    <style>
+      .box{fill:#f8fbff;stroke:#2d405f;stroke-width:2;rx:8;ry:8}.module{fill:#eef5ff;stroke:#496a99;stroke-width:2;rx:8;ry:8}.prior{fill:#f7fff7;stroke:#527e5a;stroke-width:2;rx:8;ry:8}.node{fill:#fff7ed;stroke:#9a5a1e;stroke-width:1.5}.text{font:18px Arial,sans-serif;fill:#172033}.small{font:14px Arial,sans-serif;fill:#172033}.tiny{font:12px Arial,sans-serif;fill:#172033}.arrow{stroke:#3f6fb5;stroke-width:4;fill:none;marker-end:url(#arrow)}.thin{stroke:#5f6f84;stroke-width:2;fill:none;marker-end:url(#arrow2)}.blue{fill:#dbeafe;stroke:#2563eb;stroke-width:2}.green{fill:#dcfce7;stroke:#16a34a;stroke-width:2}.yellow{fill:#fef3c7;stroke:#d97706;stroke-width:2}
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3f6fb5"/></marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6f84"/></marker>
+  </defs>
+
+  <text x="560" y="38" text-anchor="middle" class="text" font-weight="700">CMD-PLA Overall Architecture</text>
+
+  <rect x="45" y="88" width="125" height="100" class="box"/>
+  <text x="108" y="118" text-anchor="middle" class="small" font-weight="700">Raw Complex</text>
+  <circle cx="86" cy="150" r="9" class="node"/><circle cx="112" cy="136" r="8" class="blue"/><circle cx="133" cy="158" r="8" class="node"/><circle cx="101" cy="170" r="7" class="blue"/>
+  <line x1="86" y1="150" x2="112" y2="136" stroke="#666"/><line x1="112" y1="136" x2="133" y2="158" stroke="#666"/><line x1="86" y1="150" x2="101" y2="170" stroke="#666"/>
+
+  <rect x="225" y="70" width="390" height="140" class="module"/>
+  <text x="420" y="98" text-anchor="middle" class="small" font-weight="700">Conditional Molecular Dynamics Refinement</text>
+  <rect x="255" y="120" width="82" height="58" class="box"/><text x="296" y="153" text-anchor="middle" class="tiny">Input X_L, X_P</text>
+  <rect x="362" y="120" width="118" height="58" class="box"/><text x="421" y="145" text-anchor="middle" class="tiny">conditional</text><text x="421" y="163" text-anchor="middle" class="tiny">denoising</text>
+  <rect x="505" y="120" width="82" height="58" class="box"/><text x="546" y="153" text-anchor="middle" class="tiny">refined complex</text>
+  <path d="M337 149 H362" class="thin"/><path d="M480 149 H505" class="thin"/>
+
+  <path d="M170 138 H225" class="arrow"/>
+  <text x="650" y="125" class="small">Build covalent and contact graphs</text>
+  <path d="M615 140 H735" class="arrow"/>
+  <rect x="770" y="70" width="145" height="85" class="box"/><text x="843" y="104" text-anchor="middle" class="small" font-weight="700">Intra Graph</text><text x="843" y="128" text-anchor="middle" class="tiny">covalent bonds</text>
+  <rect x="770" y="172" width="145" height="85" class="box"/><text x="843" y="206" text-anchor="middle" class="small" font-weight="700">Inter Graph</text><text x="843" y="230" text-anchor="middle" class="tiny">5A contacts</text>
+  <path d="M735 140 V112 H770" class="arrow"/><path d="M735 140 V214 H770" class="arrow"/>
+
+  <rect x="175" y="260" width="620" height="180" class="module"/>
+  <text x="485" y="288" text-anchor="middle" class="small" font-weight="700">Local Dual View Encoder (LDVE)</text>
+  <rect x="205" y="310" width="170" height="96" class="box"/><text x="290" y="334" text-anchor="middle" class="small" font-weight="700">Dual-View E(3)</text><text x="290" y="362" text-anchor="middle" class="tiny">intra-view messages</text><text x="290" y="384" text-anchor="middle" class="tiny">inter-view messages</text>
+  <rect x="430" y="310" width="300" height="96" class="box"/><text x="580" y="334" text-anchor="middle" class="small" font-weight="700">RBF-Gated Aggregation</text><rect x="470" y="355" width="58" height="28" class="yellow"/><text x="499" y="375" text-anchor="middle" class="tiny">RBF</text><rect x="555" y="355" width="64" height="28" class="green"/><text x="587" y="375" text-anchor="middle" class="tiny">gate</text><rect x="645" y="355" width="58" height="28" class="blue"/><text x="674" y="375" text-anchor="middle" class="tiny">pool</text>
+  <path d="M375 358 H430" class="thin"/>
+
+  <rect x="175" y="478" width="620" height="145" class="prior"/>
+  <text x="485" y="505" text-anchor="middle" class="small" font-weight="700">Global Semantic Prior Encoder (GSPE)</text>
+  <rect x="210" y="530" width="245" height="62" class="box"/><text x="333" y="556" text-anchor="middle" class="small" font-weight="700">Pocket Semantic Injection</text><text x="333" y="578" text-anchor="middle" class="tiny">ESM-2 residue representation</text>
+  <rect x="510" y="530" width="245" height="62" class="box"/><text x="633" y="556" text-anchor="middle" class="small" font-weight="700">Ligand Semantic Injection</text><text x="633" y="578" text-anchor="middle" class="tiny">Mol2Vec substructure representation</text>
+
+  <path d="M108 188 V340 H175" class="thin"/><path d="M843 257 V340 H795" class="thin"/>
+  <path d="M108 188 V550 H175" class="thin"/>
+
+  <rect x="875" y="318" width="36" height="92" class="blue"/><text x="893" y="305" text-anchor="middle" class="small">h_c</text>
+  <rect x="875" y="482" width="36" height="58" class="blue"/><text x="893" y="468" text-anchor="middle" class="small">h_p</text>
+  <rect x="875" y="565" width="36" height="58" class="blue"/><text x="893" y="552" text-anchor="middle" class="small">h_L</text>
+  <path d="M795 350 H875" class="arrow"/><path d="M795 540 H875" class="arrow"/><path d="M795 595 H875" class="arrow"/>
+
+  <circle cx="960" cy="470" r="24" fill="#fff9c4" stroke="#c8a300" stroke-width="3"/><text x="960" y="477" text-anchor="middle" class="text" font-weight="700">+</text>
+  <path d="M911 364 H960 V446" class="arrow"/><path d="M911 511 H936" class="arrow"/><path d="M911 594 H960 V494" class="arrow"/>
+  <polygon points="1010,410 1082,445 1082,505 1010,540" fill="#eef5ff" stroke="#2d405f" stroke-width="2"/>
+  <text x="1048" y="465" text-anchor="middle" class="small" font-weight="700">MLP</text><text x="1048" y="488" text-anchor="middle" class="small" font-weight="700">Predictor</text>
+  <path d="M984 470 H1010" class="arrow"/>
+</svg>

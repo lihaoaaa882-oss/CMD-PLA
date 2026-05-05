@@ -1,57 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="690" viewBox="0 0 1120 690">
-  <title>CMD-PLA Model Framework</title>
-  <desc>Repository-friendly framework diagram based on Figure 1 of Conditional Molecular Dynamics Refinement for Protein-Ligand Affinity Prediction.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1926" height="1404" viewBox="0 0 1926 1404">
+  <title>CMD-PLA model framework</title>
+  <desc>Updated model framework diagram for CMD-PLA.</desc>
   <defs>
     <style>
-      .box{fill:#f8fbff;stroke:#2d405f;stroke-width:2;rx:8;ry:8}.module{fill:#eef5ff;stroke:#496a99;stroke-width:2;rx:8;ry:8}.prior{fill:#f7fff7;stroke:#527e5a;stroke-width:2;rx:8;ry:8}.node{fill:#fff7ed;stroke:#9a5a1e;stroke-width:1.5}.text{font:18px Arial,sans-serif;fill:#172033}.small{font:14px Arial,sans-serif;fill:#172033}.tiny{font:12px Arial,sans-serif;fill:#172033}.arrow{stroke:#3f6fb5;stroke-width:4;fill:none;marker-end:url(#arrow)}.thin{stroke:#5f6f84;stroke-width:2;fill:none;marker-end:url(#arrow2)}.blue{fill:#dbeafe;stroke:#2563eb;stroke-width:2}.green{fill:#dcfce7;stroke:#16a34a;stroke-width:2}.yellow{fill:#fef3c7;stroke:#d97706;stroke-width:2}
+      .bg{fill:#000}.panel{fill:none;stroke:#12386c;stroke-width:2}.box{fill:#f1f1f1;stroke:#12386c;stroke-width:2}.top{fill:#dbe4f3;stroke:#12386c;stroke-width:2}.txt{font-family:Times New Roman,serif;fill:#000}.white{font-family:Times New Roman,serif;fill:#fff}.label{font-size:30px}.small{font-size:21px}.tiny{font-size:16px}.nodeB{fill:#9bb9e5;stroke:#19365f;stroke-width:3}.nodeO{fill:#ed7d31;stroke:#8a3f10;stroke-width:3}.arrow{stroke:#c9d9ef;stroke-width:13;fill:none;marker-end:url(#arrow)}.line{stroke:#071f45;stroke-width:3}.bluebar{fill:#5b9bd5;stroke:#fff;stroke-width:4}.green{fill:#c6efce;stroke:#12386c;stroke-width:2}.cyan{fill:#b7f0f2;stroke:#12386c;stroke-width:2}.cream{fill:#fff2cc;stroke:#12386c;stroke-width:2}
     </style>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3f6fb5"/></marker>
-    <marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6f84"/></marker>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#c9d9ef"/></marker>
   </defs>
+  <rect width="1926" height="1404" class="bg"/>
 
-  <text x="560" y="38" text-anchor="middle" class="text" font-weight="700">CMD-PLA Overall Architecture</text>
+  <g id="molecule-left" transform="translate(92 145)">
+    <circle cx="65" cy="122" r="8" class="nodeB"/><circle cx="91" cy="96" r="8" class="nodeB"/><circle cx="126" cy="78" r="8" class="nodeB"/><circle cx="149" cy="119" r="8" class="nodeO"/><circle cx="126" cy="161" r="8" class="nodeO"/><circle cx="86" cy="153" r="8" class="nodeO"/><circle cx="168" cy="184" r="8" class="nodeB"/><circle cx="205" cy="153" r="8" class="nodeB"/><circle cx="232" cy="94" r="8" class="nodeB"/><circle cx="188" cy="70" r="8" class="nodeB"/><circle cx="254" cy="58" r="8" class="nodeB"/><circle cx="285" cy="96" r="8" class="nodeB"/><circle cx="286" cy="168" r="8" class="nodeB"/><circle cx="242" cy="194" r="8" class="nodeB"/><circle cx="110" cy="212" r="8" class="nodeB"/><circle cx="62" cy="181" r="8" class="nodeB"/><line x1="65" y1="122" x2="91" y2="96" class="line"/><line x1="91" y1="96" x2="126" y2="78" class="line"/><line x1="126" y1="78" x2="149" y2="119" class="line"/><line x1="149" y1="119" x2="126" y2="161" class="line"/><line x1="126" y1="161" x2="86" y2="153" class="line"/><line x1="149" y1="119" x2="205" y2="153" class="line"/><line x1="205" y1="153" x2="242" y2="194" class="line"/><line x1="188" y1="70" x2="232" y2="94" class="line"/>
+  </g>
 
-  <rect x="45" y="88" width="125" height="100" class="box"/>
-  <text x="108" y="118" text-anchor="middle" class="small" font-weight="700">Raw Complex</text>
-  <circle cx="86" cy="150" r="9" class="node"/><circle cx="112" cy="136" r="8" class="blue"/><circle cx="133" cy="158" r="8" class="node"/><circle cx="101" cy="170" r="7" class="blue"/>
-  <line x1="86" y1="150" x2="112" y2="136" stroke="#666"/><line x1="112" y1="136" x2="133" y2="158" stroke="#666"/><line x1="86" y1="150" x2="101" y2="170" stroke="#666"/>
+  <path d="M322 254 H398" class="arrow"/>
 
-  <rect x="225" y="70" width="390" height="140" class="module"/>
-  <text x="420" y="98" text-anchor="middle" class="small" font-weight="700">Conditional Molecular Dynamics Refinement</text>
-  <rect x="255" y="120" width="82" height="58" class="box"/><text x="296" y="153" text-anchor="middle" class="tiny">Input X_L, X_P</text>
-  <rect x="362" y="120" width="118" height="58" class="box"/><text x="421" y="145" text-anchor="middle" class="tiny">conditional</text><text x="421" y="163" text-anchor="middle" class="tiny">denoising</text>
-  <rect x="505" y="120" width="82" height="58" class="box"/><text x="546" y="153" text-anchor="middle" class="tiny">refined complex</text>
-  <path d="M337 149 H362" class="thin"/><path d="M480 149 H505" class="thin"/>
+  <g id="cmd" transform="translate(428 62)">
+    <rect x="0" y="0" width="835" height="370" class="top"/>
+    <text x="418" y="48" text-anchor="middle" class="txt" style="font-size:36px">Conditional Molecular Dynamics Refinement</text>
+    <rect x="30" y="68" width="198" height="284" class="box"/><rect x="228" y="68" width="273" height="284" class="box"/><rect x="501" y="68" width="306" height="284" class="box"/>
+    <text x="73" y="102" class="txt small">Input:</text><text x="128" y="102" class="txt small" font-style="italic">X<tspan baseline-shift="sub" font-size="14">L</tspan>, X<tspan baseline-shift="sub" font-size="14">P</tspan></text>
+    <ellipse cx="125" cy="220" rx="80" ry="58" fill="#c5d8ee" opacity=".9"/><circle cx="91" cy="205" r="7" class="nodeB"/><circle cx="122" cy="188" r="7" class="nodeO"/><circle cx="154" cy="205" r="7" class="nodeB"/><circle cx="137" cy="235" r="7" class="nodeO"/><circle cx="99" cy="245" r="7" class="nodeB"/><line x1="91" y1="205" x2="122" y2="188" class="line"/><line x1="122" y1="188" x2="154" y2="205" class="line"/><line x1="122" y1="188" x2="137" y2="235" class="line"/><line x1="99" y1="245" x2="137" y2="235" class="line"/>
+    <text x="272" y="110" class="txt tiny">L<tspan baseline-shift="sub" font-size="11">cmd</tspan></text><text x="272" y="134" class="txt tiny">= E[...] - E[...]</text>
+    <circle cx="300" cy="225" r="32" fill="#9bb9e5" opacity=".55"/><circle cx="350" cy="225" r="32" fill="#ed7d31" opacity=".55"/><path d="M330 225 H385" class="arrow" style="stroke-width:4"/><circle cx="430" cy="225" r="28" fill="#9bb9e5" opacity=".55"/><text x="305" y="302" class="txt small">t=0</text><text x="444" y="302" class="txt small">t=1</text>
+    <text x="518" y="100" class="txt small">Output:</text><g transform="translate(560 120) scale(.9)"><circle cx="70" cy="35" r="8" class="nodeB"/><circle cx="105" cy="58" r="8" class="nodeB"/><circle cx="140" cy="40" r="8" class="nodeO"/><circle cx="174" cy="65" r="8" class="nodeB"/><circle cx="205" cy="35" r="8" class="nodeB"/><circle cx="235" cy="75" r="8" class="nodeB"/><circle cx="210" cy="120" r="8" class="nodeO"/><circle cx="162" cy="132" r="8" class="nodeO"/><circle cx="112" cy="118" r="8" class="nodeB"/><circle cx="82" cy="88" r="8" class="nodeO"/><circle cx="66" cy="140" r="8" class="nodeB"/><circle cx="134" cy="178" r="8" class="nodeB"/><circle cx="202" cy="180" r="8" class="nodeB"/><line x1="70" y1="35" x2="105" y2="58" class="line"/><line x1="105" y1="58" x2="140" y2="40" class="line"/><line x1="140" y1="40" x2="174" y2="65" class="line"/><line x1="174" y1="65" x2="205" y2="35" class="line"/><line x1="205" y1="35" x2="235" y2="75" class="line"/><line x1="210" y1="120" x2="162" y2="132" class="line"/><line x1="162" y1="132" x2="112" y2="118" class="line"/><line x1="112" y1="118" x2="82" y2="88" class="line"/><line x1="134" y1="178" x2="202" y2="180" class="line"/><text x="142" y="82" fill="red" style="font-size:32px">×</text><text x="195" y="135" fill="red" style="font-size:32px">×</text></g>
+    <text x="640" y="336" text-anchor="middle" class="txt small">refinement complex</text>
+  </g>
 
-  <path d="M170 138 H225" class="arrow"/>
-  <text x="650" y="125" class="small">Build covalent and contact graphs</text>
-  <path d="M615 140 H735" class="arrow"/>
-  <rect x="770" y="70" width="145" height="85" class="box"/><text x="843" y="104" text-anchor="middle" class="small" font-weight="700">Intra Graph</text><text x="843" y="128" text-anchor="middle" class="tiny">covalent bonds</text>
-  <rect x="770" y="172" width="145" height="85" class="box"/><text x="843" y="206" text-anchor="middle" class="small" font-weight="700">Inter Graph</text><text x="843" y="230" text-anchor="middle" class="tiny">5A contacts</text>
-  <path d="M735 140 V112 H770" class="arrow"/><path d="M735 140 V214 H770" class="arrow"/>
+  <path d="M1264 255 H1340" class="arrow"/><text x="1368" y="266" class="white label">↻</text><path d="M1406 255 H1482" class="arrow"/>
+  <path d="M1484 145 H1655" class="arrow"/><path d="M1484 380 H1655" class="arrow"/>
+  <g transform="translate(1690 60)"><circle cx="35" cy="32" r="8" class="nodeO"/><circle cx="67" cy="30" r="8" class="nodeO"/><circle cx="92" cy="8" r="8" class="nodeO"/><circle cx="112" cy="40" r="8" class="nodeB"/><circle cx="92" cy="60" r="8" class="nodeO"/><circle cx="138" cy="66" r="8" class="nodeB"/><circle cx="162" cy="36" r="8" class="nodeB"/><circle cx="42" cy="94" r="8" class="nodeB"/><circle cx="82" cy="120" r="8" class="nodeB"/><circle cx="124" cy="118" r="8" class="nodeO"/><circle cx="102" cy="162" r="8" class="nodeO"/><circle cx="160" cy="135" r="8" class="nodeO"/></g>
+  <g transform="translate(1690 318)"><circle cx="22" cy="46" r="8" class="nodeO"/><circle cx="58" cy="14" r="8" class="nodeO"/><circle cx="84" cy="42" r="8" class="nodeO"/><circle cx="138" cy="8" r="8" class="nodeB"/><circle cx="112" cy="42" r="8" class="nodeB"/><circle cx="142" cy="72" r="8" class="nodeB"/><circle cx="160" cy="96" r="8" class="nodeB"/><circle cx="36" cy="104" r="8" class="nodeO"/></g>
 
-  <rect x="175" y="260" width="620" height="180" class="module"/>
-  <text x="485" y="288" text-anchor="middle" class="small" font-weight="700">Local Dual View Encoder (LDVE)</text>
-  <rect x="205" y="310" width="170" height="96" class="box"/><text x="290" y="334" text-anchor="middle" class="small" font-weight="700">Dual-View E(3)</text><text x="290" y="362" text-anchor="middle" class="tiny">intra-view messages</text><text x="290" y="384" text-anchor="middle" class="tiny">inter-view messages</text>
-  <rect x="430" y="310" width="300" height="96" class="box"/><text x="580" y="334" text-anchor="middle" class="small" font-weight="700">RBF-Gated Aggregation</text><rect x="470" y="355" width="58" height="28" class="yellow"/><text x="499" y="375" text-anchor="middle" class="tiny">RBF</text><rect x="555" y="355" width="64" height="28" class="green"/><text x="587" y="375" text-anchor="middle" class="tiny">gate</text><rect x="645" y="355" width="58" height="28" class="blue"/><text x="674" y="375" text-anchor="middle" class="tiny">pool</text>
-  <path d="M375 358 H430" class="thin"/>
+  <g id="ldve" transform="translate(362 470)">
+    <rect x="0" y="0" width="1152" height="470" class="panel"/>
+    <rect x="14" y="60" width="512" height="400" class="panel"/><rect x="632" y="56" width="513" height="404" class="panel"/>
+    <rect x="28" y="114" width="238" height="158" class="panel"/><rect x="28" y="286" width="238" height="160" class="panel"/>
+    <rect x="330" y="122" width="98" height="58" rx="8" class="green"/><text x="378" y="162" text-anchor="middle" class="txt label" font-style="italic">h<tspan baseline-shift="super" font-size="18">S</tspan><tspan baseline-shift="sub" font-size="22">intra</tspan></text>
+    <rect x="330" y="210" width="98" height="58" rx="8" class="green"/><text x="379" y="250" text-anchor="middle" class="txt label" font-style="italic">x<tspan baseline-shift="super" font-size="18">S</tspan><tspan baseline-shift="sub" font-size="22">intra</tspan></text>
+    <rect x="330" y="295" width="98" height="58" rx="8" class="cyan"/><text x="378" y="335" text-anchor="middle" class="txt label" font-style="italic">h<tspan baseline-shift="super" font-size="18">S</tspan><tspan baseline-shift="sub" font-size="22">inter</tspan></text>
+    <rect x="330" y="382" width="98" height="58" rx="8" class="cyan"/><text x="379" y="422" text-anchor="middle" class="txt label" font-style="italic">x<tspan baseline-shift="super" font-size="18">S</tspan><tspan baseline-shift="sub" font-size="22">inter</tspan></text>
+    <rect x="447" y="170" width="72" height="54" rx="8" class="green"/><text x="483" y="206" text-anchor="middle" class="txt label" font-style="italic">ψ<tspan baseline-shift="sub" font-size="20">cov</tspan></text>
+    <rect x="447" y="340" width="72" height="54" rx="8" class="cyan"/><text x="483" y="376" text-anchor="middle" class="txt label" font-style="italic">ψ<tspan baseline-shift="sub" font-size="20">ncov</tspan></text>
+    <rect x="104" y="187" width="42" height="42" rx="6" class="green"/><text x="125" y="218" text-anchor="middle" class="txt label" font-style="italic">h</text>
+    <rect x="104" y="353" width="42" height="42" rx="6" class="cyan"/><text x="125" y="383" text-anchor="middle" class="txt label" font-style="italic">h</text>
+    <text x="70" y="245" class="white label">Σ →</text><text x="70" y="410" class="white label">Σ →</text>
+    <rect x="647" y="155" width="106" height="84" rx="10" class="cream"/><text x="700" y="196" text-anchor="middle" class="txt label" font-style="italic">d<tspan baseline-shift="sub" font-size="20">ij</tspan></text><text x="746" y="222" text-anchor="middle" class="txt label" transform="rotate(-50 746 222)">▥</text>
+    <rect x="780" y="172" width="102" height="44" rx="6" class="cream"/><text x="831" y="203" text-anchor="middle" class="txt label">RBF</text>
+    <rect x="902" y="151" width="90" height="84" rx="10" class="cream"/><text x="947" y="187" text-anchor="middle" class="txt label">gate</text><text x="947" y="220" text-anchor="middle" class="txt label" font-style="italic">W<tspan baseline-shift="sub" font-size="20">ij</tspan></text>
+    <rect x="1064" y="167" width="72" height="54" rx="8" class="cream"/><text x="1100" y="204" text-anchor="middle" class="txt label" font-style="italic">ψ<tspan baseline-shift="sub" font-size="20">intra</tspan></text>
+    <rect x="647" y="318" width="112" height="84" rx="10" fill="#e2f0d9" stroke="#12386c" stroke-width="2"/><text x="703" y="358" text-anchor="middle" class="txt label" font-style="italic">d<tspan baseline-shift="sub" font-size="20">ij</tspan></text><text x="748" y="386" text-anchor="middle" class="txt label" transform="rotate(-50 748 386)">▥</text>
+    <rect x="780" y="335" width="102" height="44" rx="6" fill="#e2f0d9" stroke="#12386c" stroke-width="2"/><text x="831" y="366" text-anchor="middle" class="txt label">RBF</text>
+    <rect x="902" y="316" width="90" height="84" rx="10" fill="#e2f0d9" stroke="#12386c" stroke-width="2"/><text x="947" y="350" text-anchor="middle" class="txt label">gate</text><text x="947" y="383" text-anchor="middle" class="txt label" font-style="italic">W<tspan baseline-shift="sub" font-size="20">ij</tspan></text>
+    <rect x="1064" y="335" width="72" height="54" rx="8" fill="#e2f0d9" stroke="#12386c" stroke-width="2"/><text x="1100" y="372" text-anchor="middle" class="txt label" font-style="italic">ψ<tspan baseline-shift="sub" font-size="20">inter</tspan></text>
+  </g>
 
-  <rect x="175" y="478" width="620" height="145" class="prior"/>
-  <text x="485" y="505" text-anchor="middle" class="small" font-weight="700">Global Semantic Prior Encoder (GSPE)</text>
-  <rect x="210" y="530" width="245" height="62" class="box"/><text x="333" y="556" text-anchor="middle" class="small" font-weight="700">Pocket Semantic Injection</text><text x="333" y="578" text-anchor="middle" class="tiny">ESM-2 residue representation</text>
-  <rect x="510" y="530" width="245" height="62" class="box"/><text x="633" y="556" text-anchor="middle" class="small" font-weight="700">Ligand Semantic Injection</text><text x="633" y="578" text-anchor="middle" class="tiny">Mol2Vec substructure representation</text>
+  <g id="gspe" transform="translate(362 965)">
+    <rect x="0" y="0" width="1152" height="386" class="panel"/>
+    <rect x="44" y="56" width="488" height="324" class="panel"/><rect x="582" y="56" width="522" height="324" class="panel"/>
+    <rect x="92" y="180" width="166" height="46" class="box"/><text x="175" y="211" text-anchor="middle" class="txt label">ESM-2</text>
+    <rect x="304" y="118" width="220" height="235" rx="30" class="box"/><text x="325" y="156" class="txt small">Align:</text><text x="390" y="162" text-anchor="middle" class="txt tiny">structure ↔</text><text x="390" y="183" text-anchor="middle" class="txt tiny">sequence mapping</text><text x="325" y="242" class="txt small">Project:</text><text x="397" y="267" text-anchor="middle" class="txt tiny">ẽ<tspan baseline-shift="sub" font-size="11">r</tspan> = W<tspan baseline-shift="sub" font-size="11">esm</tspan>e<tspan baseline-shift="sub" font-size="11">r</tspan><tspan baseline-shift="super" font-size="11">esm</tspan></text><text x="325" y="330" class="txt small">Fuse:</text>
+    <rect x="604" y="118" width="254" height="216" class="panel"/><rect x="858" y="118" width="236" height="216" class="panel"/>
+    <circle cx="748" cy="190" r="6" class="nodeB"/><circle cx="750" cy="236" r="6" fill="#ffd966" stroke="#12386c" stroke-width="2"/><circle cx="752" cy="280" r="6" fill="#f4b183" stroke="#12386c" stroke-width="2"/><rect x="898" y="176" width="90" height="18" fill="#9bb9e5"/><rect x="898" y="220" width="90" height="18" fill="#ffd966"/><rect x="898" y="265" width="90" height="18" fill="#f4b183"/>
+  </g>
 
-  <path d="M108 188 V340 H175" class="thin"/><path d="M843 257 V340 H795" class="thin"/>
-  <path d="M108 188 V550 H175" class="thin"/>
-
-  <rect x="875" y="318" width="36" height="92" class="blue"/><text x="893" y="305" text-anchor="middle" class="small">h_c</text>
-  <rect x="875" y="482" width="36" height="58" class="blue"/><text x="893" y="468" text-anchor="middle" class="small">h_p</text>
-  <rect x="875" y="565" width="36" height="58" class="blue"/><text x="893" y="552" text-anchor="middle" class="small">h_L</text>
-  <path d="M795 350 H875" class="arrow"/><path d="M795 540 H875" class="arrow"/><path d="M795 595 H875" class="arrow"/>
-
-  <circle cx="960" cy="470" r="24" fill="#fff9c4" stroke="#c8a300" stroke-width="3"/><text x="960" y="477" text-anchor="middle" class="text" font-weight="700">+</text>
-  <path d="M911 364 H960 V446" class="arrow"/><path d="M911 511 H936" class="arrow"/><path d="M911 594 H960 V494" class="arrow"/>
-  <polygon points="1010,410 1082,445 1082,505 1010,540" fill="#eef5ff" stroke="#2d405f" stroke-width="2"/>
-  <text x="1048" y="465" text-anchor="middle" class="small" font-weight="700">MLP</text><text x="1048" y="488" text-anchor="middle" class="small" font-weight="700">Predictor</text>
-  <path d="M984 470 H1010" class="arrow"/>
+  <g id="fusion" transform="translate(1586 645)">
+    <rect x="0" y="0" width="30" height="110" class="bluebar"/><path d="M30 55 H110 V255" class="arrow"/>
+    <rect x="5" y="354" width="30" height="110" class="bluebar"/><path d="M35 409 H110 V255" class="arrow"/>
+    <rect x="5" y="578" width="30" height="110" class="bluebar"/><path d="M35 633 H110 V255" class="arrow"/>
+    <circle cx="120" cy="255" r="31" fill="#dbe4f3" stroke="#12386c" stroke-width="3"/><circle cx="120" cy="255" r="16" fill="#ffff00" stroke="#12386c" stroke-width="2"/><path d="M104 255 H136M120 239 V271" stroke="#12386c" stroke-width="3"/>
+    <path d="M151 255 H195" class="arrow"/>
+    <polygon points="210,125 370,190 370,330 210,385" fill="#dbe4f3" stroke="#12386c" stroke-width="2"/>
+    <text x="290" y="245" text-anchor="middle" class="txt label">MLP</text><text x="290" y="292" text-anchor="middle" class="txt label">Predictor</text>
+  </g>
 </svg>

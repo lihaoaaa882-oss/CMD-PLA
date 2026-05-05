@@ -140,7 +140,3 @@ This manuscript has not been formally published yet. If you use this repository 
 ```
 
 The citation will be updated after the paper is accepted or published.
-
-## License
-
-Please add a license before public reuse. Common academic code-release choices include MIT, Apache-2.0, and BSD-3-Clause.

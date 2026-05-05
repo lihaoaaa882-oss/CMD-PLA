@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use CMD-PLA in your research, please cite the paper."
+title: "TODO: Full paper title"
+authors:
+  - family-names: "TODO"
+    given-names: "TODO"
+year: 2026
+url: "https://github.com/lihaoaaa882-oss/CMD-PLA"
+repository-code: "https://github.com/lihaoaaa882-oss/CMD-PLA"
+abstract: "TODO: Replace with the paper abstract or a concise project summary."
+keywords:
+  - protein-ligand affinity
+  - molecular graph
+  - deep learning
+  - computational biology
+license: "NOASSERTION"

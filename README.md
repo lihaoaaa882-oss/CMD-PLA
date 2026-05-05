@@ -82,12 +82,19 @@ PyTorch and PyTorch Geometric should be installed with versions matching your CU
 
 ## Data
 
+The manuscript uses two groups of datasets:
+
+1. **Small-molecule conformational datasets for CMD initialization:** PCQM4Mv2 and ANI-1x.
+2. **Protein-ligand affinity benchmarks:** PDBbind v2020, CASF-2013, and CASF-2016.
+
 Place processed datasets under `CMD_PLA_main/data/` or update `data_root` in `CMD_PLA_main/config_hg/TrainConfig.json`.
 
 The scripts expect dataset splits such as:
 
 ```text
 data/
++-- PCQM4Mv2/
++-- ANI-1x/
 +-- PDBbind/
 +-- CASF_2013/
 +-- CASF_2016/

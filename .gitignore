@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated outputs
+CMD_PLA_main/model/
+CMD_PLA_main/logs/
+CMD_PLA_main/runs/
+CMD_PLA_main/output/
+CMD_PLA_main/outputs/
+
+# Large local data; publish public download links instead.
+CMD_PLA_main/data/
+*.pt
+*.pth
+*.ckpt
+
+# Keep the paper PDF tracked.
+!docs/CMD_PLA.pdf

@@ -27,17 +27,29 @@ The framework contains three main stages:
 ```text
 .
 +-- CMD_PLA_main/
-|   +-- CMD_core/              # CMD molecular geometry module
-|   +-- config_hg/             # training configuration
-|   +-- log/                   # logging helpers
-|   +-- dataset.py             # graph dataset and data loader
-|   +-- HG.py                  # main hybrid graph model
-|   +-- preprocessing.py       # data preprocessing utilities
-|   +-- train.py               # training script
-|   +-- predict.py             # evaluation / prediction script
+|   +-- CMD_core/                         # conditional molecular dynamics refinement module
+|   |   +-- CMD_batch_tensor.py           # batched tensor operations for CMD refinement
+|   |   +-- module/
+|   |   |   +-- graph.py                  # graph construction utilities
+|   |   |   +-- ieconv.py                 # interaction equivariant convolution components
+|   |   |   +-- interpolant_matcher.py    # CMD interpolation / matching module
+|   |   |   +-- model.py                  # CMD refinement model
+|   |   |   +-- torchmd_et.py             # TorchMD equivariant transformer backbone
+|   |   +-- utils/
+|   |       +-- bio_utils.py              # biomolecular processing helpers
+|   |       +-- constants.py              # chemistry and geometry constants
+|   |       +-- random_seed.py            # reproducibility utilities
+|   |       +-- torchmd_utils.py          # TorchMD helper functions
+|   +-- config_hg/                        # training configuration
+|   +-- log/                              # logging helpers
+|   +-- dataset.py                        # graph dataset and data loader
+|   +-- HG.py                             # main hybrid graph model
+|   +-- preprocessing.py                  # data preprocessing utilities
+|   +-- train.py                          # training script
+|   +-- predict.py                        # evaluation / prediction script
 +-- docs/
 |   +-- github-profile-snippet.md
-+-- cmd_pla_framework.png      # model framework diagram
++-- cmd_pla_framework.png                 # model framework diagram
 +-- CITATION.cff
 +-- requirements.txt
 +-- README.md
@@ -108,14 +120,19 @@ python predict.py
 
 ## Citation
 
+This manuscript has not been formally published yet. If you use this repository before publication, please cite it as an unpublished manuscript / software repository:
+
 ```bibtex
-@article{li2026cmdpla,
-  title   = {Conditional Molecular Dynamics Refinement for Protein-Ligand Affinity Prediction},
-  author  = {Li, Hao and Niu, Dongjiang and Wang, Xiaofeng and Wei, Zhiqiang and Li, Zhen},
-  year    = {2026},
-  url     = {https://github.com/lihaoaaa882-oss/CMD-PLA}
+@misc{li2026cmdpla,
+  title        = {Conditional Molecular Dynamics Refinement for Protein-Ligand Affinity Prediction},
+  author       = {Li, Hao and Niu, Dongjiang and Wang, Xiaofeng and Wei, Zhiqiang and Li, Zhen},
+  year         = {2026},
+  note         = {Unpublished manuscript and software repository},
+  howpublished = {\url{https://github.com/lihaoaaa882-oss/CMD-PLA}}
 }
 ```
+
+The citation will be updated after the paper is accepted or published.
 
 ## License
 

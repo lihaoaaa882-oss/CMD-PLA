@@ -1,28 +1,26 @@
 # CMD-PLA
 
-Official project page and code release for the CMD-PLA paper.
+Official code repository for **Conditional Molecular Dynamics Refinement for Protein-Ligand Affinity Prediction**.
 
-> Paper title, author list, venue, and DOI/arXiv information are left as editable fields because they should match the final manuscript metadata exactly.
+## Authors
 
-## Paper
+Hao Li, Dongjiang Niu, Xiaofeng Wang, Zhiqiang Wei, and Zhen Li.
 
-- **Paper:** [CMD_PLA.pdf](docs/CMD_PLA.pdf)
-- **Title:** TODO: replace with the full paper title
-- **Authors:** TODO: replace with author names
-- **Venue:** TODO: replace with conference/journal/preprint information
-- **Code:** [lihaoaaa882-oss/CMD-PLA](https://github.com/lihaoaaa882-oss/CMD-PLA)
+Affiliations include Qingdao University, MindRank AI Ltd, Ocean University of China, Shandong Provincial Key Laboratory of Intelligent Molecular Science and Engineering, and Shandong Provincial Key Laboratory of Pathogenesis and Prevention of Brain Diseases.
 
 ## Overview
 
-CMD-PLA is a deep learning framework for protein-ligand affinity prediction. The repository contains the training, preprocessing, prediction, graph-construction, and CMD molecular geometry components used by the paper.
+CMD-PLA is a dynamics-aware framework for protein-ligand affinity prediction. It models ligand conformational refinement as a pocket-conditioned molecular dynamics process, then combines local geometric interaction modeling with global semantic priors for robust affinity regression.
 
-The implementation includes:
+## Model Framework
 
-- a protein-ligand graph dataset pipeline in `CMD_PLA_main/dataset.py`;
-- the main hybrid graph model in `CMD_PLA_main/HG.py`;
-- training and evaluation entry points in `CMD_PLA_main/train.py` and `CMD_PLA_main/predict.py`;
-- CMD molecular geometry utilities under `CMD_PLA_main/CMD_core/`;
-- configuration files under `CMD_PLA_main/config_hg/`.
+![CMD-PLA framework](docs/cmd_pla_framework.svg)
+
+The framework contains three main stages:
+
+1. **Conditional Molecular Dynamics Refinement (CMD-Refine):** refines ligand coordinates under pocket geometric constraints to reduce sensitivity to initial pose noise.
+2. **Local Dual View Encoder (LDVE):** constructs intra-view covalent graphs and inter-view ligand-pocket contact graphs, then applies E(3)-equivariant message passing and RBF-gated aggregation.
+3. **Global Semantic Prior Encoder (GSPE):** introduces pocket-level ESM representations and ligand-level Mol2Vec representations, which are fused with local complex features and decoded by an MLP predictor.
 
 ## Repository Structure
 
@@ -38,29 +36,42 @@ The implementation includes:
 |   +-- train.py               # training script
 |   +-- predict.py             # evaluation / prediction script
 +-- docs/
-|   +-- CMD_PLA.pdf            # paper PDF
+|   +-- cmd_pla_framework.svg  # model framework diagram
 +-- CITATION.cff
 +-- requirements.txt
 +-- README.md
 ```
 
-## Installation
+## Requirements
 
-Create a Python environment and install the required packages:
+```text
+biopython==1.79
+networkx==3.2.1
+numpy==1.23.5
+pandas==2.2.1
+pymol==3.0.0
+python==3.10.0
+rdkit==2023.9.5
+scikit-learn==1.4.1
+scipy==1.12.0
+torch==2.0.1
+torch-geometric==2.5.2
+tqdm==4.66.2
+```
+
+Install the Python packages with:
 
 ```bash
-conda create -n cmd-pla python=3.10
-conda activate cmd-pla
 pip install -r requirements.txt
 ```
 
-Install PyTorch and PyTorch Geometric versions that match your CUDA version. See the official PyTorch and PyG installation instructions if your CUDA toolkit differs from the default environment used in the paper.
+PyTorch and PyTorch Geometric should be installed with versions matching your CUDA environment.
 
 ## Data
 
-Place the processed datasets under `CMD_PLA_main/data/` or update `data_root` in `CMD_PLA_main/config_hg/TrainConfig.json`.
+Place processed datasets under `CMD_PLA_main/data/` or update `data_root` in `CMD_PLA_main/config_hg/TrainConfig.json`.
 
-The current scripts expect dataset splits such as:
+The scripts expect dataset splits such as:
 
 ```text
 data/
@@ -74,7 +85,7 @@ data/
 +-- test_2016.csv
 ```
 
-Large datasets and trained checkpoints should usually be released through GitHub Releases, Zenodo, Google Drive, or another external storage service, then linked here.
+Large datasets, trained checkpoints, and generated outputs are intentionally excluded from this repository.
 
 ## Training
 
@@ -94,28 +105,17 @@ cd CMD_PLA_main
 python predict.py
 ```
 
-Before publishing the repository, replace any local absolute checkpoint paths in `predict.py` with paths relative to the repository or document where users can download the trained models.
-
 ## Citation
 
-If this work is useful for your research, please cite:
-
 ```bibtex
-@article{cmdpla2026,
-  title   = {TODO: Full paper title},
-  author  = {TODO: Author list},
-  journal = {TODO: Venue or preprint server},
+@article{li2026cmdpla,
+  title   = {Conditional Molecular Dynamics Refinement for Protein-Ligand Affinity Prediction},
+  author  = {Li, Hao and Niu, Dongjiang and Wang, Xiaofeng and Wei, Zhiqiang and Li, Zhen},
   year    = {2026},
-  url     = {TODO: DOI, arXiv, or repository URL}
+  url     = {https://github.com/lihaoaaa882-oss/CMD-PLA}
 }
 ```
 
-The same placeholder metadata is also available in `CITATION.cff` for GitHub's citation panel.
-
 ## License
 
-TODO: choose and add a license file before making the repository public. Common choices for academic code releases include MIT, Apache-2.0, and BSD-3-Clause.
-
-## Contact
-
-TODO: add the corresponding author's email address or GitHub profile.
+Please add a license before public reuse. Common academic code-release choices include MIT, Apache-2.0, and BSD-3-Clause.

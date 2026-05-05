@@ -1,16 +1,25 @@
 cff-version: 1.2.0
 message: "If you use CMD-PLA in your research, please cite the paper."
-title: "TODO: Full paper title"
+title: "Conditional Molecular Dynamics Refinement for Protein-Ligand Affinity Prediction"
 authors:
-  - family-names: "TODO"
-    given-names: "TODO"
+  - family-names: "Li"
+    given-names: "Hao"
+  - family-names: "Niu"
+    given-names: "Dongjiang"
+  - family-names: "Wang"
+    given-names: "Xiaofeng"
+  - family-names: "Wei"
+    given-names: "Zhiqiang"
+  - family-names: "Li"
+    given-names: "Zhen"
 year: 2026
 url: "https://github.com/lihaoaaa882-oss/CMD-PLA"
 repository-code: "https://github.com/lihaoaaa882-oss/CMD-PLA"
-abstract: "TODO: Replace with the paper abstract or a concise project summary."
+abstract: "CMD-PLA is a dynamics-aware framework for protein-ligand affinity prediction that combines conditional molecular dynamics refinement, local dual-view geometric encoding, and global semantic priors."
 keywords:
   - protein-ligand affinity
+  - molecular dynamics
   - molecular graph
   - deep learning
-  - computational biology
+  - drug discovery
 license: "NOASSERTION"

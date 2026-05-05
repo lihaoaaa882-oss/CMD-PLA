@@ -14,7 +14,7 @@ CMD-PLA is a dynamics-aware framework for protein-ligand affinity prediction. It
 
 ## Model Framework
 
-![CMD-PLA framework](docs/cmd_pla_framework.svg)
+![CMD-PLA framework](cmd_pla_framework.png)
 
 The framework contains three main stages:
 
@@ -36,7 +36,8 @@ The framework contains three main stages:
 |   +-- train.py               # training script
 |   +-- predict.py             # evaluation / prediction script
 +-- docs/
-|   +-- cmd_pla_framework.svg  # model framework diagram
+|   +-- github-profile-snippet.md
++-- cmd_pla_framework.png      # model framework diagram
 +-- CITATION.cff
 +-- requirements.txt
 +-- README.md

@@ -1,5 +1,6 @@
 cff-version: 1.2.0
-message: "If you use CMD-PLA in your research, please cite the paper."
+message: "If you use CMD-PLA before the paper is published, please cite this unpublished manuscript and software repository."
+type: software
 title: "Conditional Molecular Dynamics Refinement for Protein-Ligand Affinity Prediction"
 authors:
   - family-names: "Li"
@@ -15,7 +16,7 @@ authors:
 year: 2026
 url: "https://github.com/lihaoaaa882-oss/CMD-PLA"
 repository-code: "https://github.com/lihaoaaa882-oss/CMD-PLA"
-abstract: "CMD-PLA is a dynamics-aware framework for protein-ligand affinity prediction that combines conditional molecular dynamics refinement, local dual-view geometric encoding, and global semantic priors."
+abstract: "CMD-PLA is a dynamics-aware framework for protein-ligand affinity prediction that combines conditional molecular dynamics refinement, local dual-view geometric encoding, and global semantic priors. This repository accompanies an unpublished manuscript."
 keywords:
   - protein-ligand affinity
   - molecular dynamics
